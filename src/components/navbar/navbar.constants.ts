@@ -7,7 +7,7 @@ setupI18n()
 
 export const navbarItems = [
     {
-        path: '/user',
+        path: '/profil',
         icon: faUser,
         text: t('my_account'),
     },

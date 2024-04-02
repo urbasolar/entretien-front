@@ -3,6 +3,7 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { Layout } from '@layouts/mainLayout';
 import { LoginPage } from '@/pages/login/login';
 import { getDataLocalStorage } from '@/utils/localStorage';
+import { ProfilPage } from '@/pages/profil/profil';
 
 const PriveateRoute = (props: { children: JSX.Element }) => {
   const { children } = props;
@@ -17,7 +18,12 @@ export const router = createBrowserRouter([
         <Layout />
       </PriveateRoute>
     ),
-    children: [],
+    children: [
+      {
+        path: '/profil',
+        element: <ProfilPage />,
+      },
+    ],
   },
   {
     path: '/login',
