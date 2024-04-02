@@ -2,10 +2,11 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from '@layouts/mainLayout';
 import { LoginPage } from '@/pages/login/login';
+import { getDataLocalStorage } from '@/utils/localStorage';
 
 const PriveateRoute = (props: { children: JSX.Element }) => {
   const { children } = props;
-  return false ? children : <Navigate to='/login' />;
+  return getDataLocalStorage('user') ? children : <Navigate to='/login' />;
 };
 
 export const router = createBrowserRouter([
