@@ -9,6 +9,8 @@ import {
   getDataLocalStorage,
   saveDataLocalStorage,
 } from './utils/localStorage';
+import { UserContext } from './context';
+import { useLogin } from './data/loginData';
 
 setupI18n();
 
@@ -18,6 +20,8 @@ if (!getDataLocalStorage('user')) {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UserContext.Provider value={useLogin}>
+      <RouterProvider router={router} />
+    </UserContext.Provider>
   </React.StrictMode>
 );
