@@ -1,6 +1,9 @@
 {
   "close": "",
+  "delete_account": "",
+  "logout": "",
   "my_account": "",
   "open": "",
+  "settings": "",
   "you_are_not_authorized": ""
 }

@@ -1,6 +1,9 @@
 {
   "close": "",
+  "delete_account": "",
+  "logout": "déconnexion",
   "my_account": "mon compte",
   "open": "",
+  "settings": "paramètres",
   "you_are_not_authorized": "vous n'êtes pas autorisé à acceder à cette application"
 }
