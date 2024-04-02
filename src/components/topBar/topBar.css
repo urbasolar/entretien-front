@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+    .top-bar {
+        @apply text-white flex flex-row w-full justify-between items-center h-14 bg-neutral-black px-4 ml-[2px] mb-[2px]
+    }
+}

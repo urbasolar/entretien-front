@@ -9,17 +9,17 @@
  * @returns {string} - A string of class names separated by a space. It always starts with the base class name, followed by either the `valid` or `unvalid` class name based on the `condition`.
  */
 export const computeStyles = (baseClassName: string, options: {
-    condition: boolean,
-    valid: string,
-    unvalid: string
-}) => {
-    const classNames = [baseClassName];
-  
-    if (options.condition && options.valid) {
-      classNames.push(options.valid);
-    } else if (!options.condition && options.unvalid) {
-      classNames.push(options.unvalid);
-    }
-  
-    return classNames.join(' ');
+  condition?: boolean,
+  valid?: string,
+  unvalid?: string
+}): string => {
+const classNames = [baseClassName];
+
+if (options.condition && options.valid) {
+  classNames.push(options.valid);
+} else if (!options.condition && options.unvalid) {
+  classNames.push(options.unvalid);
+}
+
+  return classNames.join(' ');
 };

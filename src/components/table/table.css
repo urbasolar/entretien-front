@@ -1,0 +1,8 @@
+@tailwind base;
+
+@layer base {
+    .td-center {
+        text-align: center;
+        text-align: -webkit-center;
+    }
+}

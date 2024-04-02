@@ -17,12 +17,17 @@ export default defineConfig({
       '@shared': '/src/shared',
       '@translation': '/src/translation',
       '@pages': '/src/pages',
+      '@ressources': '/src/ressources',
+      '@modules': '/src/modules',
+      '@playground': '/src/playground',
+      '@layouts': '/src/layouts',
     },
   },
   optimizeDeps: {
     extensions: ["cjs"]
   },
   server: {
-    port: 3000,
+    port: 3001,
+    open: true,
   },
 })

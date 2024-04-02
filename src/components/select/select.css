@@ -1,0 +1,15 @@
+@tailwind components;
+
+@layer components {
+   .select-input {
+      @apply rounded-xl w-full appearance-none flex justify-between items-center px-m border-solid border-2;
+   }
+
+   .select-options {
+    @apply w-full bg-neutral-dark-gray absolute max-h-96 overflow-y-auto text-white rounded-lg mt-2 z-50
+   }
+
+   .label-multiple-select {
+      @apply bg-neutral-dark-light rounded-lg py-[0.120rem] px-m m-xs font-normal lowercase
+   }
+}

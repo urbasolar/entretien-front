@@ -2,7 +2,6 @@
 export default {
   content: ["./src/**/*.{ts,tsx,css}"],
   exclude: ["./src/themes/*.{css}"],
-  darkMode: 'selector',
   theme: {
     extend: {
       colors: {

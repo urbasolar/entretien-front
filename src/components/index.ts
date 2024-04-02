@@ -1,1 +1,5 @@
 export * from "@components/navbar"
+export * from "@components/select"
+export * from "@components/button"
+export * from "@components/topBar"
+export * from "@components/checkbox"

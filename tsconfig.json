@@ -32,6 +32,7 @@
       "@api/*": ["./src/api/*"],
       "@shared/*": ["./src/shared/*"],
       "@translation/*": ["./src/translation/*"],
+      "@layouts/*": ["./src/layouts/*"],
     }
   },
   "include": ["src"],
