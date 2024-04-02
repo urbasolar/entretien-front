@@ -1,4 +1,4 @@
-import { faUser } from "@fortawesome/pro-solid-svg-icons";
+import { faGear, faUser } from "@fortawesome/pro-solid-svg-icons";
 
 import setupI18n from "@translation/setupI18n";
 import { t } from "@utils/customTranslation";
@@ -11,4 +11,9 @@ export const navbarItems = [
         icon: faUser,
         text: t('my_account'),
     },
+    {
+        path: '/settings',
+        icon: faGear,
+        text: t('settings'),
+    }
 ]

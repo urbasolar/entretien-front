@@ -4,6 +4,7 @@ import { Layout } from '@layouts/mainLayout';
 import { LoginPage } from '@/pages/login/login';
 import { getDataLocalStorage } from '@/utils/localStorage';
 import { ProfilPage } from '@/pages/profil/profil';
+import { SettingsPage } from '@/pages/settings/settings';
 
 const PriveateRoute = (props: { children: JSX.Element }) => {
   const { children } = props;
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
       {
         path: '/profil',
         element: <ProfilPage />,
+      },
+      {
+        path: '/settings',
+        element: <SettingsPage />,
       },
     ],
   },
