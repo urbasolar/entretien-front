@@ -1,4 +1,5 @@
 import { Button } from '@/components/button/button';
+import { Card } from '@/components/card/card';
 import { useLogin } from '@/data/loginData';
 import { InputsLogin } from '@/modules/inputsLogin/inputsLogin';
 import { saveDataLocalStorage } from '@/utils/localStorage';
@@ -17,7 +18,11 @@ export const LoginPage = () => {
   const [loginSucceed, setLoginSucceed] = useState(false);
 
   const handleLogin = () => {
-    if (JSON.stringify(login) === JSON.stringify(useLogin)) {
+    console.log(login);
+    if (
+      JSON.stringify(login.email) === JSON.stringify(useLogin.email) &&
+      JSON.stringify(login.password) === JSON.stringify(useLogin.password)
+    ) {
       setLoginSucceed(true);
       saveDataLocalStorage('user', login);
       if (loginFailed) {
@@ -31,23 +36,36 @@ export const LoginPage = () => {
     }
   };
   return (
-    <>
-      <InputsLogin setData={setLogin} data={login} />
-      <div className='mt-4 flex justify-center flex-col items-center'>
-        <Button
-          disabled={!login.email || !login.password}
-          onClick={handleLogin}
-          text='login'
-          size='md'
-        />
-        {loginFailed && <p className='text-red-500'>Login failed</p>}
-        {loginSucceed && (
-          <div className='flex flex-col justify-center mt-m gap-m'>
-            <p className='text-green-500'>Login succeed</p>
-            <FontAwesomeIcon icon={faSpinner} spin />
+    <div className='w-full h-screen bg-neutral-dark-black items-center justify-between flex flex-col'>
+      <div className='h-1/2 content-end'>
+        <Card className='bg-neutral-dark-gray flex justify-evenly flex-col p-8'>
+          <div>
+            <InputsLogin setData={setLogin} data={login} />
           </div>
-        )}
+          <div className='mt-4 flex justify-center flex-col items-center gap-m'>
+            <Button
+              disabled={!login.email || !login.password}
+              onClick={handleLogin}
+              text='Se connecter'
+              size='md'
+            />
+            <div>
+              <p className='text-red-500'>
+                {loginFailed ? 'Échec de connexion' : ' '}
+              </p>
+              {loginSucceed && (
+                <div className='flex flex-col justify-center mt-m gap-m'>
+                  <p className='text-green-500'>Connexion réussie</p>
+                  <FontAwesomeIcon icon={faSpinner} spin />
+                </div>
+              )}
+            </div>
+          </div>
+        </Card>
       </div>
-    </>
+      <div className=''>
+        <p className='text-gray-50/20'>Urbasolar ©</p>
+      </div>
+    </div>
   );
 };
