@@ -1,87 +1,86 @@
-import { faArrowRight } from "@fortawesome/pro-regular-svg-icons";
-import { faArrowLeft } from "@fortawesome/pro-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { type FC } from "react";
-import { NavLink } from "react-router-dom";
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { type FC } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import darkLogo from "@assets/Logo/logo-dark.svg";
-import logo from "@assets/Logo/logo.svg";
-import { navbarItems } from "@components/navbar/navbar.constants";
-import { useNavbar } from "@components/navbar/navbar.hook";
-import { ETheme } from "@shared/enums/index";
-import { computeStyles } from "@utils/computeStyles";
+import darkLogo from '@assets/Logo/logo-dark.svg';
+import logo from '@assets/Logo/logo.svg';
+import { navbarItems } from '@components/navbar/navbar.constants';
+import { useNavbar } from '@components/navbar/navbar.hook';
+import { ETheme } from '@shared/enums/index';
+import { computeStyles } from '@utils/computeStyles';
 
-import "./navbar.css";
+import './navbar.css';
 
 export const Navbar: FC = (): JSX.Element => {
   const { openNavbar, setOpenNavbar, themeMode } = useNavbar();
 
   return (
     <div
-      id="navbar"
-      className={computeStyles("navbar", {
+      id='navbar'
+      className={computeStyles('navbar', {
         condition: openNavbar,
-        valid: "w-64",
-        unvalid: "w-20",
+        valid: 'w-64',
+        unvalid: 'w-20',
       })}
     >
-      <div className="p-l flex justify-between">
+      <div className='p-l flex justify-between'>
         {openNavbar && (
           <img
             src={themeMode === ETheme.dark ? logo : darkLogo}
-            alt="logo"
-            className="text-neutral-black dark:text-white"
+            alt='logo'
+            className='text-neutral-black dark:text-white'
           />
         )}
         <button
-          type="button"
-          className={computeStyles("navbar-button", {
+          type='button'
+          className={computeStyles('navbar-button', {
             condition: openNavbar,
-            unvalid: "w-full",
+            unvalid: 'w-full',
           })}
           onClick={() => setOpenNavbar(!openNavbar)}
         >
           <FontAwesomeIcon
             icon={openNavbar ? faArrowLeft : faArrowRight}
-            className="text-neutral-black dark:text-white font-extrabold"
+            className='text-neutral-black dark:text-white font-extrabold'
           />
         </button>
       </div>
-      <nav className="p-l">
+      <nav className='p-l'>
         <ul>
           {navbarItems.map((item) => (
-            <li key={item.text} className="py-xs">
+            <li key={item.text} className='py-xs'>
               <NavLink
                 end
                 to={item.path}
                 className={({ isActive }) =>
-                  computeStyles("w-full block p-m hover:navbar-navlink", {
+                  computeStyles('w-full block p-m hover:navbar-navlink', {
                     condition: isActive,
-                    valid: "navbar-navlink",
+                    valid: 'navbar-navlink',
                   })
                 }
               >
                 {({ isActive }) => (
                   <div
-                    className={computeStyles("hover:text-white", {
+                    className={computeStyles('hover:text-white', {
                       condition: openNavbar,
-                      unvalid: "text-center",
+                      unvalid: 'text-center',
                     })}
                   >
                     <FontAwesomeIcon
                       icon={item.icon}
-                      className={computeStyles("text-l font-bold", {
+                      className={computeStyles('text-l font-bold', {
                         condition: isActive,
-                        valid: "text-neutral-black dark:text-white",
-                        unvalid: "text-icon",
+                        valid: 'text-neutral-black dark:text-white',
+                        unvalid: 'text-icon',
                       })}
                     />
                     {openNavbar && (
                       <span
-                        className={computeStyles("navbar-text", {
+                        className={computeStyles('navbar-text', {
                           condition: openNavbar,
-                          valid: "pl-3",
-                          unvalid: "pl-0",
+                          valid: 'pl-3',
+                          unvalid: 'pl-0',
                         })}
                       >
                         {item.text}

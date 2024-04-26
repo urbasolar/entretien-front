@@ -1,4 +1,4 @@
-import { faGear, faUser } from "@fortawesome/pro-solid-svg-icons";
+import { faGear, faUser } from "@fortawesome/free-solid-svg-icons";
 
 import setupI18n from "@translation/setupI18n";
 import { t } from "@utils/customTranslation";
