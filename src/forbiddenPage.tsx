@@ -1,4 +1,4 @@
-import { faCircleXmark } from '@fortawesome/pro-regular-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { useCustomTranslation } from '@utils/hooks/useCustomTranslation';

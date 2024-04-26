@@ -3,7 +3,7 @@ import { Card } from '@/components/card/card';
 import { useLogin } from '@/data/loginData';
 import { InputsLogin } from '@/modules/inputsLogin/inputsLogin';
 import { saveDataLocalStorage } from '@/utils/localStorage';
-import { faSpinner } from '@fortawesome/pro-regular-svg-icons';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';

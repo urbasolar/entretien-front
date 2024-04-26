@@ -1,7 +1,7 @@
 import {
   faEllipsis,
   faEllipsisVertical,
-} from '@fortawesome/pro-regular-svg-icons';
+} from '@fortawesome/free-regular-svg-icons';
 import { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
